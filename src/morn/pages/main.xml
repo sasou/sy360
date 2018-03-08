@@ -1,0 +1,8 @@
+<View sceneWidth="500" sceneHeight="400" sceneColor="0xffffff" sceneBg="" layers="1,1,0,0,第 1 层">
+  <Container layers="1,1,0" layer="1" x="364" y="368" right="10" bottom="10">
+    <Button label="重置" skin="png.comp.button" x="90" layer="1" var="btn_reset" width="39" height="23"/>
+    <Button label="右边" skin="png.comp.button" x="45" layer="1" var="btn_right" width="39" height="23"/>
+    <Button label="左边" skin="png.comp.button" layer="1" var="btn_left" width="39" height="23"/>
+  </Container>
+  <Label x="6" y="5" layer="1" width="128" height="18" var="ztai" color="0x6633"/>
+</View>

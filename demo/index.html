@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>3D全景</title>
+	<meta name="description" content="" />
+	
+	<script src="js/swfobject.js"></script>
+	<script>
+		var flashvars = {
+		};
+		var params = {
+			menu: "false",
+			scale: "noScale",
+			allowFullscreen: "true",
+			allowScriptAccess: "always",
+			bgcolor: "",
+			wmode: "direct" // can cause issues with FP settings & webcam
+		};
+		var attributes = {
+			id:"3D"
+		};
+		swfobject.embedSWF(
+			"3D.swf", 
+			"altContent", "500", "400", "10.0.0", 
+			"expressInstall.swf", 
+			flashvars, params, attributes);
+		function sy_Complete(str) { 
+		  sy_go();
+		}
+		function getSwfInstance(movieName) { 
+		  if (navigator.appName.indexOf("Microsoft") != -1) { 
+			return window[movieName]; 
+		  } else { 
+			return document[movieName]; 
+		  } 
+		} 
+		function sy_go() {
+			var obj = getSwfInstance("3D");
+			var jg = obj.sy_go("图片全景播放器");
+		}
+		function sy_pic(pic){
+			var obj = getSwfInstance("3D");
+			var jg = obj.sy_params(pic);
+		}		
+	</script>
+	<style>
+		html, body { height:100%;align:center; overflow:hidden; }
+		body { margin:0; }
+	</style>
+</head>
+<body>
+	<div id="altContent">
+		<h1>3D全景</h1>
+		<p><a href="http://www.adobe.com/go/getflashplayer">Get Adobe Flash player</a></p>
+	</div>
+	<br>
+	<a href="javascript:void(0);" onclick="sy_pic({'right': '360/right.jpg','left': '360/left.jpg','top': '360/top.jpg','bottom': '360/bottom.jpg','near': '360/near.jpg','far': '360/far.jpg'});">默认</a> |
+	<br>
+	<font color="red">操作方法：</font><br>
+	1、键盘控制：键盘方向键控制上下左右；S缩小 W 放大<br>
+	2、鼠标控制：鼠标点视图控制移动，鼠标中间滚动 放大缩小<br>
+	3、按键控制：左边：向左边移动；右边：向右边移动；重置：恢复默认状态<br>
+	<font color="red">技术分析：</font><br>
+	1、只需一张全景图片（现在的照相机、手机都支持拍全景照片）<br>
+	2、没有使用3D加速，3D加速需要flash 11以上，而目前市场上还有大量的flash 9、flash 10等低版本<br>
+	<br>
+
+</body>
+</html>
